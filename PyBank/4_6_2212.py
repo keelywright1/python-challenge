@@ -18,10 +18,10 @@ with open(csv_path) as csv_file:
         
         if (first_line == True):
             prev_rev = int(row[1])
+            total = int(row[1])
             first_line = False
         else:
-            rev = int(row[1]) + 1
-
+            rev = int(row[1])
             months += 1
             total += rev
             total_ch += rev - prev_rev
