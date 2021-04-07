@@ -11,17 +11,21 @@ with open(csv_path) as csv_file:
 
     months = 0
     total = 0
-
+    first_line = True
     total_ch = 0
-    prev_rev = 
-
+     
     for row in csv_read:
-        rev = int(row[1])
+        
+        if (first_line == True):
+            prev_rev = int(row[1])
+            first_line = False
+        else:
+            rev = int(row[1]) + 1
 
-        months += 1
-        total += rev
-        total_ch += rev - prev_rev
-        prev_rev = rev
+            months += 1
+            total += rev
+            total_ch += rev - prev_rev
+            prev_rev = rev
 
     output = (
     f'\n    Financial Analysis\n\

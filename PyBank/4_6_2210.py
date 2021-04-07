@@ -13,7 +13,8 @@ with open(csv_path) as csv_file:
     total = 0
 
     total_ch = 0
-    prev_rev = 
+    prev_rev = int(row[2]) + 1
+    
 
     for row in csv_read:
         rev = int(row[1])
